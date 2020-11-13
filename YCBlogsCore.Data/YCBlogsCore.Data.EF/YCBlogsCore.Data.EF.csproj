@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\YCBlogsCore.Domain\YCBlogsCore.Domain.csproj" />
+    <ProjectReference Include="..\YCBlogsCore.Data\YCBlogsCore.Data.csproj" />
+  </ItemGroup>
+
+</Project>

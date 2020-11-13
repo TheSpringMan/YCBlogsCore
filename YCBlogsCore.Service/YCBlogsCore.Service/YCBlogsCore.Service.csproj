@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\YCBlogsCore.Data\YCBlogsCore.Data.EF\YCBlogsCore.Data.EF.csproj" />
+    <ProjectReference Include="..\..\YCBlogsCore.Data\YCBlogsCore.Data.Repository\YCBlogsCore.Data.Repository.csproj" />
+    <ProjectReference Include="..\..\YCBlogsCore.Data\YCBlogsCore.Data\YCBlogsCore.Data.csproj" />
+    <ProjectReference Include="..\..\YCBlogsCore.Domain\YCBlogsCore.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\YCBlogsCore.Domain\YCBlogsCore.Domain.csproj" />
+    <ProjectReference Include="..\YCBlogsCore.Data.EF\YCBlogsCore.Data.EF.csproj" />
+    <ProjectReference Include="..\YCBlogsCore.Data\YCBlogsCore.Data.csproj" />
+  </ItemGroup>
+
+</Project>
