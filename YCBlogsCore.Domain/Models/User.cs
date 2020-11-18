@@ -17,5 +17,7 @@ namespace YCBlogsCore.Domain.Models
         public string MobilePhone { get; set; }
 
         public string Remark { get; set; }
+
+        public virtual IList<UserRole>  UserRoles { get; set; }
     }
 }
