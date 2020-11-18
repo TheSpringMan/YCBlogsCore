@@ -3,10 +3,18 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using YCBlogsCore.Data.EF;
+using YCBlogsCore.Data;
+using YCBlogsCore.Data.Repository;
+using YCBlogsCore.Service;
+using YCBlogsCore.Utils;
+using YCBlogsCore.Utils.Models;
+using Microsoft.Extensions.Logging;
 
 namespace YCBlogsCore.Web
 {
@@ -16,12 +24,20 @@ namespace YCBlogsCore.Web
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            GlobalContext.DbConfig = Configuration.GetSection("DbConfig").Get<DbConfigSetting>();
+            services.AddScoped<DbContext, EFDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddScoped<IAccountService, AccountService>();
+
+            
             services.AddControllersWithViews();
         }
 
