@@ -23,8 +23,7 @@ namespace YCBlogsCore.Web
                // x.AddConsole();
                 x.SetMinimumLevel(LogLevel.Trace);
                 x.AddLog4Net("log4net.config");
-            })
-                .ConfigureWebHostDefaults(webBuilder =>
+            }).ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });

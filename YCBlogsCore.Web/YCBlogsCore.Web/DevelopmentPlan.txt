@@ -1,0 +1,24 @@
+﻿1.分层
+	UI-->Service-->Data Access Level-->EF Core-->DB
+
+2.程序集说明
+	YCBlogsCore.Domain: 模型类
+	YCBlogsCore.Data: Repository和Unit Of Work模式的接口IRepository，IUnitOfWork
+	YCBlogsCore.Data.EF: 使用EF Core实现Repository和Unit Of Work模式；添加数据库命令拦截器（记录异常SQL和耗时SQL）
+	YCBlogsCore.Data.Repository：各个模型的Repository（继承YCBlogsCore.Data.EF中的Repository）
+	YCBlogsCore.Service：服务层
+	YCBlogsCore.Web：使用ASP.NET MVC Core设计模式
+	YCBlogsCore.Utils：公用的工具类库
+
+3.开发计划
+	A.搭建项目框架
+	B.编辑配置文件
+		添加数据库配置：连接字符串、SQL耗时等（完成）
+		检索配置文档，编辑引用的地方（指令拦截器、DbContext)（完成）
+	C.添加Log4net日志记录工具
+		添加Microsoft.Extensions.Logging.Log4Net.AspNetCore包，并注册（完成）
+		定义日志记录工具类(添加完成，待测试)
+	D.创建登录界面（YCBlogsCore.Web）
+		认证和授权、数字认证签名（添加单元测试）
+		使用bootstrap完善登录页面
+	F.自定义路由、过滤器、捆扎
